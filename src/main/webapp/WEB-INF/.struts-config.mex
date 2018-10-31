@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/userAction.do" location="200,285" dimension="104,70" />
+  <StrutsActivity path="/system/menuAction.do" location="198,0" dimension="156,70" />
+  <StrutsActivity path="/system/indexAction.do" location="0,285" dimension="155,70" />
+  <StrutsActivity path="exceptionForward;6" location="0,0" dimension="153,87" />
+  <StrutsActivity path="/jsp/exception.jsp" location="9,187" dimension="135,53" />
+  <StrutsTransition id="exceptionForward;6,null,/jsp/exception.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="76,87" />
+      <AbsolutePoint location="76,187" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+  <form-beans>
+  	<form-bean name="userForm" type="org.ys.action.form.UserForm"></form-bean>
+  	<form-bean name="commonForm" type="org.ys.action.form.CommonForm"></form-bean>
+  </form-beans>
+  <global-exceptions>
+  </global-exceptions>
+  <global-forwards>
+  	<forward path="/jsp/exception.jsp" name="exceptionForward"></forward>
+  </global-forwards>
+  <action-mappings>
+  	<action path="/userAction" name="userForm" parameter="method" scope="request">
+  		<forward path="/jsp/user/addUser.jsp" name="addUser"></forward>
+  		<forward path="/jsp/user/addUserSuccess.jsp" name="addUserSuccess"></forward>
+  		<forward path="/jsp/user/userList.jsp" name="userList"></forward>
+  	</action>
+  	<action path="/system/menuAction" name="commonForm" parameter="method" scope="request">
+  		<forward path="/jsp/system/menu/menuList.jsp" name="menuList"></forward>
+  	</action>
+  	<action path="/system/indexAction" name="commonForm" parameter="method" scope="request">
+  		<forward path="/index.jsp" name="index"></forward>
+  	</action>
+  </action-mappings>
+	<controller processorClass="org.springframework.web.struts.DelegatingRequestProcessor" />
+	<message-resources parameter="org.ys.struts.ApplicationResources" />
+	<plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
+		<set-property property="contextConfigLocation" value="classpath:applicationContext.xml" />
+	</plug-in>
+</struts-config>
+
