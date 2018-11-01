@@ -21,7 +21,7 @@ Ext.onReady(function(){
 	    proxy: {
 	        //异步获取数据，这里的URL可以改为任何动态页面，只要返回JSON数据即可 
             type: 'ajax', 
-            url: baseUrl+'system/menuAction.do?method=getMenuListJsonData', 
+            url: baseUrl+'/system/menuAction.do?method=getMenuListJsonData', 
              
             reader: { 
                 root: 'root', 
@@ -77,7 +77,7 @@ Ext.onReady(function(){
 	        }),
 	        tbar:[{
 	        	xtype: 'button', text: '新增菜单',iconCls:'icon-add',handler:function(button,e){
-	        		var frameUrl = window.parent.baseUrl+'jsp/system/menu/menuForm.jsp';
+	        		var frameUrl = window.parent.baseUrl+'/jsp/system/menu/menuForm.jsp';
 	        		var listPage = Ext.getCmp(pagingToolbarId);
 	        		window.parent.createWindow('addMenuWin','新增菜单',frameUrl,600,400,'icon-form-add','menuSaveForm',listPage);
 	        	}
@@ -87,7 +87,7 @@ Ext.onReady(function(){
 	        		if(Ext.isEmpty(selected)){
 	        			window.parent.Ext.Msg.alert("选择提醒","请选择一条记录");
 	        		}else{
-		        		var frameUrl = window.parent.baseUrl+'jsp/system/menu/menuForm.jsp?menuId='+selected[0].data.menuId;
+		        		var frameUrl = window.parent.baseUrl+'/jsp/system/menu/menuForm.jsp?menuId='+selected[0].data.menuId;
 		        		var listPage = Ext.getCmp(pagingToolbarId);
 		        		window.parent.createWindow('editMenuWin','修改菜单',frameUrl,600,400,'icon-form-edit','menuSaveForm',listPage);
 		        	}
@@ -116,7 +116,7 @@ Ext.onReady(function(){
 	        		if(Ext.isEmpty(selected)){
 	        			window.parent.Ext.Msg.alert("选择提醒","请选择一条记录");
 	        		}else{
-		        		var frameUrl = window.parent.baseUrl+'jsp/system/menu/menuForm.jsp?menuId='+selected[0].data.menuId + '&viewFlag=true';
+		        		var frameUrl = window.parent.baseUrl+'/jsp/system/menu/menuForm.jsp?menuId='+selected[0].data.menuId + '&viewFlag=true';
 		        		window.parent.createWindow('addUserWin','查看菜单',frameUrl,600,400,'icon-form-view',null,null);
 		        	}
 	        	}
@@ -149,7 +149,7 @@ function deleteConfirmHandler(buttonId,text,opt){
 	if(!Ext.isEmpty(selected)){
 		if (buttonId == 'yes'){
 			Ext.Ajax.request({
-			    url: baseUrl+'system/menuAction.do?method=deleteMenu',
+			    url: baseUrl+'/system/menuAction.do?method=deleteMenu',
 			    params:{
 			    	menuId:selected[0].data.menuId
 			    },

@@ -7,9 +7,9 @@ Ext.onReady(function(){
 	var parentMenuComboId = 'parentMenuComboId';
 	var subUrl = null;
 	if(Ext.isEmpty(menuId) || menuId == "null"){
-		subUrl = baseUrl+"system/menuAction.do?method=addMenuSave";
+		subUrl = baseUrl+"/system/menuAction.do?method=addMenuSave";
 	}else{
-		subUrl = baseUrl+"system/menuAction.do?method=editMenuSave";
+		subUrl = baseUrl+"/system/menuAction.do?method=editMenuSave";
 	}
 	
 	Ext.define('MenuCombox', {
@@ -27,7 +27,7 @@ Ext.onReady(function(){
 	    proxy: {
 	        //异步获取数据，这里的URL可以改为任何动态页面，只要返回JSON数据即可 
             type: 'ajax', 
-            url: baseUrl+'system/menuAction.do?method=getMenuListJsonData', 
+            url: baseUrl+'/system/menuAction.do?method=getMenuListJsonData', 
             extraParams:{'menuType':'1'}, 
             reader: { 
                 root: 'root', 
@@ -121,7 +121,7 @@ Ext.onReady(function(){
 	if(!Ext.isEmpty(menuId) && menuId != "null"){
 		var menuForm = Ext.getCmp(menuSaveForm).getForm();
 		menuForm.load({
-		    url: baseUrl+'system/menuAction.do?method=ajaxFindMenuById',
+		    url: baseUrl+'/system/menuAction.do?method=ajaxFindMenuById',
 		    params: {
 		        menuId: menuId
 		    },success: function(form, action) {

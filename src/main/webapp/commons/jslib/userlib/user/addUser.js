@@ -18,9 +18,9 @@ Ext.onReady(function(){
 	var addUserSaveForm = 'addUserSaveForm';
 	var subUrl = null;
 	if(Ext.isEmpty(userId) || userId == "null"){
-		subUrl = baseUrl+"userAction.do?method=addUserSave";
+		subUrl = baseUrl+"/userAction.do?method=addUserSave";
 	}else{
-		subUrl = baseUrl+"userAction.do?method=editUserSave";
+		subUrl = baseUrl+"/userAction.do?method=editUserSave";
 	}
 	
 	Ext.create("Ext.container.Viewport",{
@@ -143,7 +143,7 @@ Ext.onReady(function(){
 	if(!Ext.isEmpty(userId) && userId != "null"){
 		var userForm = Ext.getCmp(addUserSaveForm).getForm();
 		userForm.load({
-		    url: baseUrl+'userAction.do?method=ajaxFindUserById',
+		    url: baseUrl+'/userAction.do?method=ajaxFindUserById',
 		    params: {
 		        userId: userId
 		    },success: function(form, action) {

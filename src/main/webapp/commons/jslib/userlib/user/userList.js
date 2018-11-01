@@ -27,7 +27,7 @@ Ext.onReady(function(){
 	    proxy: {
 	        //异步获取数据，这里的URL可以改为任何动态页面，只要返回JSON数据即可 
             type: 'ajax', 
-            url: baseUrl+'userAction.do?method=getUserListJsonData', 
+            url: baseUrl+'/userAction.do?method=getUserListJsonData', 
              
             reader: { 
                 root: 'root', 
@@ -81,7 +81,7 @@ Ext.onReady(function(){
 	        }),
 	        tbar:[{
 	        	xtype: 'button', text: '新增用户',iconCls:'icon-user-add',handler:function(button,e){
-	        		var frameUrl = window.parent.baseUrl+'jsp/user/addUser.jsp';
+	        		var frameUrl = window.parent.baseUrl+'/jsp/user/addUser.jsp';
 	        		var listPage = Ext.getCmp(pagingToolbarId);
 	        		window.parent.createWindow('addUserWin','新增用户',frameUrl,600,400,'icon-form-add','addUserSaveForm',listPage);
 	        	}
@@ -91,7 +91,7 @@ Ext.onReady(function(){
 	        		if(Ext.isEmpty(selected)){
 	        			window.parent.Ext.Msg.alert("选择提醒","请选择一条记录");
 	        		}else{
-		        		var frameUrl = window.parent.baseUrl+'jsp/user/addUser.jsp?userId='+selected[0].data.userId;
+		        		var frameUrl = window.parent.baseUrl+'/jsp/user/addUser.jsp?userId='+selected[0].data.userId;
 		        		var listPage = Ext.getCmp(pagingToolbarId);
 		        		window.parent.createWindow('addUserWin','修改用户',frameUrl,600,400,'icon-form-edit','addUserSaveForm',listPage);
 		        	}
@@ -120,7 +120,7 @@ Ext.onReady(function(){
 	        		if(Ext.isEmpty(selected)){
 	        			window.parent.Ext.Msg.alert("选择提醒","请选择一条记录");
 	        		}else{
-		        		var frameUrl = window.parent.baseUrl+'jsp/user/addUser.jsp?userId='+selected[0].data.userId + '&viewFlag=true';
+		        		var frameUrl = window.parent.baseUrl+'/jsp/user/addUser.jsp?userId='+selected[0].data.userId + '&viewFlag=true';
 		        		window.parent.createWindow('addUserWin','查看用户',frameUrl,600,400,'icon-form-view',null,null);
 		        	}
 	        	}
@@ -163,7 +163,7 @@ function deleteConfirmHandler(buttonId,text,opt){
 	if(!Ext.isEmpty(selected)){
 		if (buttonId == 'yes'){
 			Ext.Ajax.request({
-			    url: baseUrl+'userAction.do?method=deleteUser',
+			    url: baseUrl+'/userAction.do?method=deleteUser',
 			    params:{
 			    	userId:selected[0].data.userId
 			    },

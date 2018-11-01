@@ -67,7 +67,7 @@ Ext.onReady(function(){
 //	            floating:false,
 //	            margin:'0 0 0 0',
 //	            closable:true,
-//	            html: '<iframe src="'+baseUrl+'jsp/system/portal/portal.jsp'+'" width="100%" height="100%"></iframe>'
+//	            html: '<iframe src="'+baseUrl+'/jsp/system/portal/portal.jsp'+'" width="100%" height="100%"></iframe>'
 //	        },{
 //	        	xtype:'panel',
 //	            title: 'Default Tab',
@@ -76,7 +76,7 @@ Ext.onReady(function(){
 //	            floating:false,
 //	            margin:'0 0 0 0',
 //	             closable:true,
-//	            html: '<iframe src="'+baseUrl+'jsp/user/userList.jsp'+'" width="100%" height="100%"></iframe>'
+//	            html: '<iframe src="'+baseUrl+'/jsp/user/userList.jsp'+'" width="100%" height="100%"></iframe>'
 //	        }]
 	    }]
 	});
@@ -138,7 +138,7 @@ function addCenterTabClick(centerPanel,baseUrl,item,e,eOpts){
 		closable:true,
 		//frameHeader:false,
 		//header:false,
-		html: '<iframe id="'+item.id+'iframe'+'" name="'+item.id+'iframe'+'" src="'+baseUrl+item.id+'" width="100%" height="100%"></iframe>'					
+		html: '<iframe id="'+item.id+'iframe'+'" name="'+item.id+'iframe'+'" src="'+baseUrl+"/"+item.id+'" width="100%" height="100%"></iframe>'					
 	}));
 }
 
